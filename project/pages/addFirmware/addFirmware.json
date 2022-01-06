@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "right-picker": "/component/rightPicker/rightPicker"
+  },
+  "navigationBarTitleText": "添加固件"
+}

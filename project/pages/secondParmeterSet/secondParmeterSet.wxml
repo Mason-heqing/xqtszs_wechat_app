@@ -1,0 +1,10 @@
+<!--pages/secondParmeterSet/secondParmeterSet.wxml-->
+<!--二级菜单设置-->
+<view class="root">
+  <view class="page-section parallel p-30 border-top-line" wx:if="{{'region' != item.groupKey}}" data-index="{{index}}" wx:for="{{list}}" wx:key="*this" bindtap="thridLevelSet">
+    <view class="section-name">{{item.groupName}}</view>
+    <view class="section-icon">
+      <image class="w-h-40" src="../../images/arrow.png"></image>
+    </view> 
+  </view>
+</view>

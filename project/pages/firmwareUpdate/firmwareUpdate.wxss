@@ -1,0 +1,131 @@
+/* pages/firmwareUpdate/firmwareUpdate.wxss */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 0 30rpx; */
+  background: #f0f0f0;
+}
+.page-section{
+  display: flex;
+  align-items: center;
+}
+.picker{
+  display:flex;
+  align-items: center;
+  border: 1rpx solid #ddd;
+  padding: 14rpx 150rpx 14rpx 30rpx;
+}
+.picker>image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right:20rpx
+}
+.update{
+  overflow-y: scroll;
+}
+.up{
+  /* display: flex; */
+}
+.down{
+  
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+  padding-top: 30rpx;
+  /* justify-content: flex-end; */
+}
+.single .btn{
+ width: 100%;
+ text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-right: 1rpx solid #eee;
+  color: #3C6DF6;
+  font-weight: bold;
+}
+
+.individual .btn{
+  width: 50%;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.individual .delete{
+  border-right: 1rpx solid #eee;
+  color: #CE0101;
+  font-weight: bold;
+}
+.individual .updata{
+  color: #3C6DF6;
+  font-weight: bold;
+}
+.add-firmware{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+}
+
+/***提示信息**/
+.mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  z-index:100;
+}
+
+.modal-content{
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+}
+
+.main-content{
+  flex: 1;
+  height: 100%;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow-y: hidden; 
+}
+.modal-btn-close{
+  position: absolute;
+  z-index: 999;
+  right:0rpx;
+  top:0rpx;
+  width: 60rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  vertical-align: center;
+  text-align: center;
+}
+.modal-btn-close>image{
+    width:40rpx;
+    height: 40rpx;
+}
+.changePassword{
+  position: absolute;
+  left: 0;
+  bottom:50rpx;
+  width: 100%;
+}
+.modal-title{
+  padding: 30rpx 40rpx;
+  /* padding: 24rpx 40rpx 10rpx 40rpx; */
+}
+.tips-list{
+  padding: 10rpx 0;
+}
+.red{
+  color:red;
+}

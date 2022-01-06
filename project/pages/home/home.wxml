@@ -1,0 +1,85 @@
+<!--pages/home/home.wxml-->
+<view class="c" bindtap="about">
+  <view class="page-section parallel title-bg bg-w pl-40 pr-40 pt-30 pb-30">
+      <view wx:if="{{isProject}}" class="select-adress"  bindtap="projectChange">
+        <view class="adress-content">
+          <image class="location" src="../../images/home_navigation.png"></image>
+          <text>{{currentProject}}</text>
+          <image class="triangle" src="../../images/arrow_right.png"></image>
+        </view>
+      </view>
+      <view wx:else class="select-adress noAddress" bindtap="selectAdress">
+        <image class="location" src="../../images/home_navigation.png"></image>
+        <text class="select-text">请选择</text>
+      </view>
+      <view class="add-device" catchtap="addDevice">
+         <image src="../../images/add.png"></image>
+      </view>
+  </view>
+  <view class="info-search bg-w">
+        <view class='search'>
+          <input type='text' placeholder='搜索设备名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
+            bindconfirm='query'></input>
+          <image class="" src='../../images/search.png' bindtap='query'></image>
+        </view>
+  </view>
+  <view class="page-section" style="max-height: {{maxHeight}}px;overflow-y: scroll;">
+     <view class="device-list" wx:for="{{deviceList}}" wx:key="*this">
+         <view class="device-info">
+           <view class="info-left">
+            <image wx:if="{{1 == item.type}}" src="../../images/device2.png"></image>
+            <image wx:elif="{{2 == item.type}}" src="../../images/device1.png"></image>
+             <image wx:else src="../../images/device.png"></image>
+           </view>
+           <view class="info-right">
+              <view class="device-information">
+                 <view class="device-name">
+                  <text>{{item.deviceName}}</text>
+                  <text> - </text>
+                  <text>{{item.serial}}</text>
+                  </view>
+                  <view class="device-status">
+                    <image wx:if="{{item.online}}" src="../../images/device_online.png"></image>
+                    <!-- <image wx:elif="{{2 == item.status}}" src="../../images/device_abnormal.png"></image> -->
+                    <image wx:else src="../../images/device_offline.png"></image>
+                  </view>
+              </view>
+              <view class="device-type">
+                <text>{{item.model}}</text>
+                <text> - </text>
+                <text style="padding-right:20rpx;">{{item.version}}</text>
+                <!-- <image wx:if="{{1 == item.upgradeVersion}}" class="w-h-40" src="../../images/change.png"></image> -->
+                <view wx:if="{{1 == item.upgradeVersion}}" style="display:inline-block;padding:8rpx 16rpx;color:#fff;font-size: 16rpx;border-radius: 50%;border:1rpx solid red;background-color:red;">NEW</view>
+              </view>
+           </view>
+         </view>
+         <view class="device-tool mb-30">
+            <image wx:if="{{1 == item.upgradeVersion}}" data-online="{{item.online}}" data-deviceId="{{item.deviceId}}" src="../../images/upgrade.png" bindtap="upgrade"></image>
+            <image wx:else src="../../images/no_updata.png"></image>
+            <image src="../../images/setup.png" data-online="{{item.online}}" data-deviceId="{{item.deviceId}}"  bindtap="parameterSet"></image>
+            <image src="../../images/discriminate.png" data-info="{{item}}" bindtap="discriminate"></image>
+            <image src="../../images/video.png" data-info="{{item}}" bindtap="video"></image>
+            <image data-mode="3" data-serial="{{item.serial}}" data-online="{{item.online}}" data-deviceId="{{item.deviceId}}" data-type="{{item.type}}" data-deviceName="{{item.deviceName}}" data-latitude="{{item.latitude}}" data-longitude="{{item.longitude}}" data-config="{{item.config}}" bindtap="edit" src="../../images/device_edit.png"></image>
+         </view>
+     </view>
+  </view>
+</view>
+<view class="layer" hidden="{{isAdd}}">
+   <view class="tip"></view>
+   <view class="layer-content">
+    <view class="layer-item parallel" data-mode="1" bindtap="addManually">
+      <view class="layer-icon">
+        <image src="../../images/manual.png"></image>
+      </view>
+      <view class="layer-item-tool">手动添加</view>
+   </view>
+   <view class="layer-item parallel" data-mode="2" bindtap="scan">
+      <view class="layer-icon">
+        <image src="../../images/scan_code.png"></image>
+      </view>
+      <view class="layer-item-tool">扫码添加</view>
+   </view>
+   </view>
+</view>
+
+

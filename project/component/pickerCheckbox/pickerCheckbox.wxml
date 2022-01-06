@@ -1,0 +1,30 @@
+<view class="modal-con" wx:if="{{isShowModal}}">
+    <view class="modal-mask">
+        <view class="modal-box" style="width:100%;padding-top:{{isShowTitle ? '' : '50rpx'}} ">
+            <view class="modal-box-title" style="padding:30rpx" wx:if="{{isShowTitle}}">
+              <label class="btn all-select" catchtap="allSelect">
+                <checkbox class="all" checked="{{allSelect}}" />
+                 全选
+              </label>
+              <view class="text">{{modalTitle}}</view>
+              <view class="btn cancel" catchtap='cancle'>取消</view>
+            </view>
+            <view class="modal-box-body">
+              <checkbox-group bindchange="checkboxChange">
+                <label class="modal-box-list" wx:for="{{listModal}}" wx:key="*this">
+                  <view class="modal-box-item-status">
+                    <checkbox value="{{item.deviceId}}" checked="{{item.status}}" />
+                  </view>
+                  <view class="modal-box-item-info">
+                    <view class="modal-box-item-device-name">{{item.deviceName}}</view>
+                    <view class="modal-box-item-verson">{{item.version}}</view>
+                  </view>
+                </label>
+              </checkbox-group>
+            </view>
+            <view class="modal-box-footer">
+              <button catchtap='_confirm'>升级</button>
+            </view>
+        </view>
+    </view>
+</view>

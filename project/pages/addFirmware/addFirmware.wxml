@@ -1,0 +1,51 @@
+<!--pages/addFirmware/addFirmware.wxml-->
+<view class="container page-bg unset">
+    <view class="page-section mt-10 p-30 section-bg-white parallel">
+       <view class="section-name">上传固件</view>
+       <view wx:if="{{!haveFirmware}}" class="section-value align-item-center" bindtap="updataFile">
+           <image src="../../images/upfile.png"></image>
+       </view>
+       <view wx:else class="section-value align-item-center">
+           <!-- <image style="width: 90rpx;height:40rpx;padding-right:30rpx"  src="../../images/scgj.png"></image> -->
+           <text style="padding-right:10rpx">{{frimwareName}}</text>
+           <image src="../../images/delete.png" bindtap="deleteFirmware"></image>
+       </view>
+    </view>
+    <!-- <view class="pages-section mt-10 p-30 parallel section-bg-white">
+       <view class="section-name">版本号</view>
+       <view class="section-value text-right">
+          <input type="text" value="{{form.verion}}" bindinput="versionChange" placeholder="请输入版本号" />
+       </view> 
+    </view>
+    <view class="pages-section mt-10 p-30 parallel section-bg-white" bindtap="selectDeviceMode">
+      <view class="section-name device-mode-name">适配机型</view>
+      <view class="section-value device-Mode">
+         <text>{{form.model}}</text>
+         <image src="../../images/arrow.png"></image>
+      </view>
+    </view> -->
+    <view class="pages-section p-30">
+       <view class="section-name">备注</view>
+       <view class="section-value">
+          <view class="edit">
+             <image hidden="{{textareaDec}}" class="w-h-40" src="../../images/textare_dec.png"></image>
+             <textarea name="resDesc" maxlength="300" style="padding-left:{{textareaPadding}}rpx" bindinput="trimDec" value="{{form.remark}}" bindfocus="textareaFocus" bindblur="textareaBlur" placeholder="请输入" placeholder-style="color:#999;" />
+            <view class="size-number" style="color:{{inputColor}}">
+              <text>已输入</text>
+              <text>{{siziNum}}</text>/<text>300</text>
+            </view>
+          </view>
+       </view>
+    </view>
+    <view class="submit mt-100 mp-50">
+       <button class="nodisabled" bindtap="submit">上传</button>
+    </view>
+</view>
+<right-picker
+            bind:chooseEvent='choose'
+            chooseList='{{ chooseList }}'
+            multiple='{{ multiple }}' 
+            firstShow="{{showPicker}}"
+            showPicker="{{showPicker}}"
+         ></right-picker>
+

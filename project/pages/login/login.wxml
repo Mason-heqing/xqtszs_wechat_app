@@ -1,0 +1,58 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class="page-header">
+       <image src="../../images/login_icon.png"></image>
+    </view>
+    <view class="page-body">
+       <view class="page-section">
+          <image src="../../images/person.png"></image>
+          <input type="text" value="{{form.name}}" bindinput="nameTrim" placeholder="用户名" />
+       </view>
+       <view class="page-section">
+          <image src="../../images/password.png"></image>
+          <input type="password" value="{{form.password}}" bindinput="passwordTirm" placeholder="密码" />
+       </view>
+       <view class="submit">
+         <button wx:if="{{nameContent && passwordContent}}" class="nodisabled" bindtap="submit">登录</button>
+         <button wx:else disabled="true" class="disabled">登录</button>
+         <button style="margin-top:80rpx" class="nodisabled" open-type="getUserInfo" bindtap="getUserProfile">使用微信登录</button>
+       </view>
+    </view>
+</view>
+<!-- <view class="container">
+  <view class="tips">
+    <view class="tips-item">
+       <view class="tips-icon">
+         <image src="../../image/confirm_one.png"></image>
+       </view>
+       <view class="tips-name">
+          <text>微信授权</text>
+       </view>
+    </view>
+    <view class="tips-item dotted-line">
+      <view class="line"></view>
+    </view>
+    <view class="tips-item dotted-line">
+      <view class="line"></view>
+    </view>
+    <view class="tips-item bind-phone">
+      <view class="tips-icon">
+         <image src="../../image/confirm_two_determined.png"></image>
+       </view>
+       <view class="tips-name">
+          <text>绑定手机号</text>
+       </view>
+    </view>
+  </view>
+  <view class="logo">
+    <image src="../../image/logo.png"></image>
+  </view>
+  <view class="submit">  
+  <button class="subbutton" open-type="getUserInfo" bindtap="getUserProfile">
+    <image  src="../../image/wechat.png"></image>
+    <text>微信授权登录</text>
+  </button>
+  </view>
+</view> -->
+
+

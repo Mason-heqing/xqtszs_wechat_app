@@ -1,0 +1,23 @@
+/* pages/addDevice/addDevice.wxss */
+.berth-btn{
+  width:240rpx !important;
+  border:1rpx solid rgb(56, 148, 255);
+  color: rgb(56, 148, 255);
+  padding: 16rpx 0rpx !important;
+}
+.berth-list{
+  border-top:1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.title{
+  color: #666;
+}
+.item-right{
+  text-align: right;
+}
+.submit{
+  display: flex;
+}
+.colorRed{
+  color: red;
+}

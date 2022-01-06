@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modal-box": "/component/modalBox/modalBox"
+  },
+  "disableScroll":true,
+  "navigationBarTitleText": "我的"
+}

@@ -1,0 +1,39 @@
+<!--pages/myProject/myProject.wxml-->
+<view class="container">
+   <view class="department-header" bindtap="addProject">
+      <image src="../../images/add.png"></image>
+      <text>创建项目</text>
+   </view>
+   <view class="project-search">
+    <view class="info-search">
+    <view class='search'>
+      <input type='text' placeholder='搜索项目名称' confirm-type='search' value="{{inputValue}}" bindinput='inputBind'
+        bindconfirm='query'></input>
+      <image class="" src='../../images/search.png' bindtap='query'></image>
+    </view>
+  </view>
+   </view>
+   <scroll-view class="department-body" scroll-y bindscrolltolower="upper" style='height:{{scrollHeight}}px;'>
+     <view class="department-list" wx:for="{{projectList}}" wx:key="*this" data-appEditStatus="{{item.appEditStatus}}" data-id="{{item.id}}" bindtap="projectSet" data-item="{{item}}">
+      <view class="item-list">
+         <view class="item-left">项目名称</view>
+         <view class="item-right" data-content="{{item.appName}}"><text>{{item.appName}}</text></view>
+      </view>
+      <view class="item-list">
+         <view class="item-left">项目ID</view>
+         <view class="item-right" data-content="{{item.appId}}"><text selectable='true'>{{item.appId}}</text></view>
+      </view>
+      <view class="item-list">
+         <view class="item-left">项目密钥</view>
+         <view class="item-right" data-content="{{item.appSecret}}"><text selectable='true'>{{item.appSecret}}</text></view>
+      </view>
+      <!-- <view class="item-left">
+        <view><text>{{item.appName}}</text></view>
+      </view>
+     <view class="item-right">
+       <image src="../../images/arrow.png" bindtap="details"></image>
+     </view> -->
+     </view>
+   </scroll-view>
+</view>
+

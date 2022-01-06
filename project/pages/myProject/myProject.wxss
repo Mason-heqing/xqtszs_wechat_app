@@ -1,0 +1,90 @@
+/* pages/myProject/myProject.wxss */
+.department-header{
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 30rpx;
+  border-bottom:1rpx solid #f0f0f0;
+ 
+}
+.department-header text{
+  padding-left:16rpx;
+}
+.department-header>image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.department-body{
+  background: #f0f0f0;
+}
+.department-list{
+  /* display: flex;
+  flex-direction: row; */
+  margin:20rpx 0;
+  padding:30rpx;
+  /* border-bottom:1rpx solid #f0f0f0; */
+  background: #fff;
+}
+.item-list{
+  padding: 30rpx 0;
+}
+.item-left{
+  flex-grow: 1;
+}
+.item-right{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666;
+}
+.item-right>image{
+  margin-left: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.project-search{
+  position: absolute;
+  top: 111rpx;
+  width: 100%;
+  border-top: 1rpx solid #f0f0f0;
+}
+/*搜索*/
+.info-search {
+  width: 92%;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+  z-index: 999;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  background-color: whitesmoke;
+  border: 1rpx solid #ddd;
+  border-radius: 20rpx;
+}
+
+.search input {
+  width: 80%;
+  font-size: 27rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 30rpx;
+}
+
+.search image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+}
+.department-body{
+  position: absolute;
+  top:274rpx;
+  width: 100%;
+}

@@ -1,0 +1,54 @@
+/* pages/addFirmware/addFirmware.wxss */
+.unset{
+  justify-content: unset;
+}
+.section-value>image{
+   width: 40rpx;
+   height: 40rpx;
+}
+.section-name text{
+  color: #666;
+  font-size:24rpx;
+}
+.edit {
+  position: relative;
+  margin-top: 20rpx;
+  /* margin-left: 38rpx; */
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  background: #fff;
+}
+.edit>image {
+  position: absolute;
+  top: 34rpx;
+  left: 30rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.edit textarea {
+  width: 91%;
+  padding: 30rpx;
+  height: 200rpx !important;
+}
+.size-number {
+  padding: 30rpx;
+  font-size: 24rpx;
+  text-align: right;
+}
+.submit button{
+  width: 80% !important;
+}
+.device-mode-name{
+  width:30%;
+}
+.device-Mode{
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align:right;
+}
+.device-Mode image{
+  width: 40rpx;
+  height: 40rpx;
+}

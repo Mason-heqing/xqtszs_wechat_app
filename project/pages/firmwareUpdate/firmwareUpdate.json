@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "modal": "/component/pickerCheckbox/pickerCheckbox"
+  },
+  "navigationBarTitleText": "固件升级"
+}

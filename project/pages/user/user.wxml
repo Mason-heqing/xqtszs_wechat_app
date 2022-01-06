@@ -1,0 +1,41 @@
+<!--pages/user/user.wxml-->
+<view class="container ">
+   <view class="page-header">
+     <image src="../../images/person_bg.png"></image>
+     <view class="header-name">
+      <image src="{{wxavatarUrl}}"></image>
+      <view class="name-content">
+         <view><text class="user-name">{{userName}}</text></view>
+         <view><text class="account">{{userNo}}</text></view>
+      </view>
+     </view>
+   </view>
+   <view class="page-body">
+      <!-- <view class="tool">
+         <view class="item" bindtap="myProject"><image src="../../images/project.png"></image>  我的项目</view>
+         <view class="item" bindtap="myUpdate"><image src="../../images/frimware.png"></image>  我的固件</view>
+      </view> -->
+      <view class="section parallel p-30 border-top-line" bindtap="myProject">
+         <view class="section-name">我的项目</view>
+         <view class="section-value">
+            <image class="w-h-40" src="../../images/arrow.png"></image>
+         </view>
+      </view>
+      <view class="section parallel p-30 border-top-line border-bottom-line" bindtap="myUpdate">
+         <view class="section-name">我的固件</view>
+         <view class="section-value">
+            <image class="w-h-40" src="../../images/arrow.png"></image>
+         </view>
+      </view>
+      <view class="section parallel p-30 border-top-line border-bottom-line" bindtap="changePassword">
+         <view class="section-name">修改密码</view>
+         <view class="section-value">
+            <image class="w-h-40" src="../../images/arrow.png"></image>
+         </view>
+      </view>
+   </view>
+   <view class="submit">
+     <button bindtap="logout">退出</button>
+   </view>
+</view>
+<modal-box showModal="{{showModal}}"  bind:inputChange="inputChange"  bind:confirm="confirm" ></modal-box>

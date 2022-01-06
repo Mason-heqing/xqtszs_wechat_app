@@ -1,0 +1,81 @@
+<!--pages/firmwareUpdate/firmwareUpdate.wxml-->
+<view class="container">
+ <!-- <view class="page-section p-30">
+    <view class="section-name">日期:</view>
+    <view class="section-value pl-30">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            <image src="../../images/workforce_management.png"></image>
+            {{date}}
+          </view>
+        </picker>
+    </view>
+ </view> -->
+ <view class="update" style="max-height: {{maxHeight}}px;">
+    <view class="list section-bg-white p-30 mt-10" wx:for="{{list}}" wx:key="*this">
+        <view>
+           <!-- <view class="left">
+             <image class="w-h-60" src="../../images/update.png"></image>
+           </view> -->
+           <view class="right">
+            <view class="parallel pb-50">
+                 <view>固件名:</view>
+                 <view class="color-words">{{item.name}}</view>
+              </view>
+              <view class="parallel pb-50">
+                 <view>版本号:</view>
+                 <view class="color-words">{{item.version}}</view>
+              </view>
+              <view class="parallel pb-50">
+                 <view>适用型号:</view>
+                 <view class="color-words">{{item.model}}</view>
+              </view>
+              <view class="parallel pb-50">
+                 <view>上传者:</view>
+                 <view class="color-words">{{item.uploadUser}}</view>
+              </view>
+              <view class="parallel pb-50">
+                 <view>上传时间:</view>
+                 <view class="color-words">{{item.uploadTime}}</view>
+              </view>
+              <view class="parallel pb-50">
+                 <view>版本说明:</view>
+                 <view class="color-words">{{item.remark}}</view>
+              </view>
+           </view>
+        </view>
+        <view wx:if="{{!isSingle}}" class="down individual">
+           <view class="btn delete" data-id="{{item.id}}" bindtap="delete">删除</view>
+           <view class="btn updata" data-item="{{item}}" bindtap="updata">批量升级</view>
+        </view>
+        <view wx:else class="down single">
+           <view class="btn upgrade" data-item="{{item}}" bindtap="singleUpdata">升级</view>
+        </view>
+    </view>
+ </view>
+ <view wx:if="{{!isSingle}}" class="add-firmware p-30 border-top-line" bindtap="addFirmware">
+    <image class="w-h-40" src="../../images/add.png"></image>
+    <text class="pl-30">添加固件</text>
+ </view>
+</view>
+<modal 	isShowModal="{{isShowModal}}" 
+		modalTitle="{{modalTitle}}"
+		listModal="{{listModal}}" 
+		bindconfirm="confirm"
+		bindcancle="cancle">
+</modal>
+<view class='mask' hidden="{{tipsInfo}}" bindtap='hiddenMask'>
+  <view class='modal-content' style='height:{{tipsHeight}}px;width:72%' catchtap='stopM'>
+    <scroll-view scroll-y class='main-content'>
+      <view class='modal-content'>
+        <view class="modal-title">
+          <view class="tips-list" wx:for="{{tipsList}}" wx:key="*this">
+             <view>设备名称: {{item.deviceName}}</view>
+             <view>升级结果:<text class="{{'Success' == item.desc? '':'red'}}">{{'Success' == item.desc?'升级指令下发成功':item.desc}}</text></view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+

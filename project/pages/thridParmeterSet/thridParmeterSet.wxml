@@ -1,0 +1,57 @@
+<!--pages/thridParmeterSet/thridParmeterSet.wxml-->
+<view class="container position page-bg">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page-section parallel p-30 border-bottom-line section-bg-white" wx:for="{{list}}" wx:key="*this">
+     <view class="section-name">{{item.name}}</view>
+     <view class="section-value">
+       <view wx:if="{{1 == item.readonly}}" class="text-right">{{item.value}}</view>
+       <view wx:else>
+        <view class="section-content" wx:if="{{'enum' == item.type}}">
+          <picker bindchange="bindPickerChange" data-index="{{index}}" value="{{item.optionName[item.indx]}}" range="{{item.optionName}}">
+            <view class="picker">
+              <input name="{{item.key}}" hidden="true" value="{{item.value}}" />
+              {{item.optionName[item.indx]}}
+            </view>
+          </picker>
+          <image class="right_img" src='../../images/arrow.png'></image>
+        </view>
+        <view wx:elif="{{'string' == item.type}}">
+                  <view class="enum-type" wx:if="{{'system_time' == item.key}}">
+                    <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+                      <view class="tui-picker-detail">
+                        <input name="{{item.key}}" hidden="true" value="{{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}" />
+                        {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
+                      </view>
+                    </picker>
+                    <image class="w-h-40" class="right_img" src='../../images/arrow.png'></image>
+                  </view>
+                  <view class="enum-type" wx:elif="{{'time' == item.key}}">
+                      <picker mode="multiSelector" value="{{startTime}}" bindchange="startTimeChange" bindcolumnchange="startTimeColumn" range="{{startTimeArray}}">
+                        <view class="picker">
+                          <input name="{{item.key}}" hidden="true" value="{{startTimeArray[0][startTime[0]]}}:{{startTimeArray[1][startTime[1]]}}:{{startTimeArray[2][startTime[2]]}}" />
+                          {{startTimeArray[0][startTime[0]]}}:{{startTimeArray[1][startTime[1]]}}:{{startTimeArray[2][startTime[2]]}}
+                        </view>
+                      </picker>
+                      <image class="w-h-40" class="right_img" src='../../images/arrow.png'></image>
+                  </view>
+                  <view wx:else class="text-right">
+                     <input type="text" name="{{item.key}}" maxlength="{{item.maxLength}}" placeholder="请输入{{item.name}}" value="{{item.value}}"/>
+                  </view>
+        </view>
+        <view wx:elif="{{'boolean' == item.type}}">
+            <input name="{{item.key}}" hidden="true" value="{{item.value}}" />
+            <switch checked="{{0 == item.value?false:true}}" data-index="{{index}}" bindchange="switch1Change"/>
+        </view>
+        <view wx:elif="{{'integer' == item.type}}" class="text-right">
+              <input type='number' name="{{item.key}}" maxlength="{{item.maxValue}}" placeholder="请输入{{item.name}}" data-index="{{index}}" bindinput="isTypeInteger" value="{{item.value}}" />
+             </view>
+       </view>
+     </view>
+    </view>
+    <view style="width:100%;height:60rpx;border-top:1rpx solid #eee;background:#f0f0f0;"></view>
+      <view class="btn-area" wx:if="{{isShowBtn}}">
+        <button class='nodisabled' form-type="submit">提交</button>
+      </view>
+      <view style="width:100%;height:60rpx;border-top:1rpx solid #eee;background:#f0f0f0;"></view>
+  </form>
+</view>

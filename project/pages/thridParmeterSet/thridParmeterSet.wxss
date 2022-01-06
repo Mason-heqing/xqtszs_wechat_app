@@ -1,0 +1,36 @@
+/* pages/thridParmeterSet/thridParmeterSet.wxss */
+.position{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.section-name{
+  width: 30%;
+}
+.section-value{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 70%;
+}
+.section-content{
+  display: flex;
+  align-items: center;
+}
+.section-content>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.enum-type{
+  display: flex;
+  align-items: center;
+}
+.enum-type image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.btn-area{
+  background: #f0f0f0;
+}

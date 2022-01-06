@@ -1,0 +1,5 @@
+<!--pages/discriminate/discriminate.wxml-->
+<view class="page">
+  <web-view src="{{src}}"></web-view>
+</view>
+

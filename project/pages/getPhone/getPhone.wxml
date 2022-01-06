@@ -1,0 +1,37 @@
+<!--pages/getPhone/getPhone.wxml-->
+<view class="container">
+  <view class="tips">
+    <view class="tips-item">
+       <view class="tips-icon">
+         <image src="../../images/confirm_one.png"></image>
+       </view>
+       <view class="tips-name">
+          <text>微信授权</text>
+       </view>
+    </view>
+    <view class="tips-item dotted-line">
+      <view class="line"></view>
+    </view>
+    <view class="tips-item dotted-line">
+      <view class="line"></view>
+    </view>
+    <view class="tips-item bind-phone">
+      <view class="tips-icon">
+         <image src="../../images/confirm_two.png"></image>
+       </view>
+       <view class="tips-name">
+          <text>绑定手机号</text>
+       </view>
+    </view>
+  </view>
+  <view class="logo">
+    <image src="../../images/login_icon.png"></image>
+  </view>
+  <view class="submit">
+    <button class="subbutton"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image  src="../../images/phone.png"></image>
+      <text>绑定手机号</text>
+    </button>
+  </view>
+</view>
+

@@ -1,0 +1,169 @@
+/* pages/home/home.wxss */
+.c{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+}
+.adress-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.select-adress .location{
+  width: 34rpx;
+  height:34rpx;
+}
+.noAddress{
+  display: flex;
+  align-items: center;
+}
+.select-adress picker{
+ margin: 0 10rpx;
+}
+.select-adress text{
+  margin: 0 14rpx;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+}
+.currentText{
+  padding: 10rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.select-adress .triangle{
+  width:30rpx;
+  height:30rpx;
+  /* margin-top: 9rpx; */
+}
+.select-text{
+  font-size:32rpx;
+}
+
+/* 添加设备 */
+.add-device>image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.layer-icon>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 浮动框 */
+.layer{
+  position:absolute;
+  top: 100rpx;
+  right: 40rpx;
+  z-index: 99;
+}
+.tip{
+  position: absolute;
+  top: -16rpx;
+  right: 20rpx;
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-bottom: 16rpx solid #002;
+}
+.layer-content{
+  background-color: #002;
+  border-radius: 10rpx;
+}
+.layer-item-tool{
+  padding-left: 20rpx;
+  color: #fff;
+}
+.layer-item{
+  padding: 30rpx 50rpx;
+}
+.layer-item:nth-child(1){
+  border-bottom:1rpx solid #444;
+}
+
+/*搜索*/
+.info-search {
+  /* width: 92%; */
+  padding:0rpx 40rpx ;
+  background-color: #fff;
+  z-index: 9;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  background-color: whitesmoke;
+  border: 1rpx solid #ddd;
+  border-radius: 20rpx;
+}
+
+.search input {
+  width: 80%;
+  font-size: 27rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 30rpx;
+}
+
+.search image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+}
+
+
+/* 设备列表 */
+.device-information{
+  display: flex;
+  align-items: center;
+}
+.device-list{
+  padding:30rpx 40rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.device-status{
+  display:flex;
+  align-items: center;
+}
+.device-name{
+  padding-right:20rpx
+}
+.device-info{
+  display:flex;
+}
+.info-right{
+  padding-left: 30rpx;
+  flex-grow: 1;
+}
+.info-left>image{
+   width: 120rpx;
+   height: 120rpx;
+}
+.device-status>image{
+  width: 68rpx;
+  height: 34rpx;
+}
+.device-tool{
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 30rpx;
+  text-align:right; */
+}
+.device-tool>image{
+  /* padding-left: 40rpx; */
+  width: 60rpx;
+  height: 60rpx;
+}
